@@ -12,7 +12,7 @@ const ResultPage = () => {
     if (!answers || typeof answers !== 'string') return <div>Loading...</div>;
 
     const parsedAnswers = JSON.parse(answers as string);
-    const { personalType, percentages, suggestedJobs } = calculateResult(parsedAnswers);
+    const { percentages, suggestedJobs } = calculateResult(parsedAnswers);
 
     return (
         <div className="result-container">

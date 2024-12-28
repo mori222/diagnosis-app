@@ -142,10 +142,3 @@ export const questions: Question[] = [
     options: ['はい', 'いいえ'],
   },
 ];
-
-const groups = {
-  group1: questions.slice(0, 7),
-  group2: questions.slice(7, 14),
-  group3: questions.slice(14, 21),
-  group4: questions.slice(21, 28),
-}
