@@ -1,0 +1,35 @@
+.result-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #f9f9f9;
+  padding: 20px;
+  font-family: "Arial", sans-serif;
+}
+.result-container .result-title {
+  font-size: 2.5rem;
+  color: #333;
+  margin-bottom: 20px;
+  text-align: center;
+}
+.result-container .result-text {
+  font-size: 1.5rem;
+  color: #555;
+  margin-bottom: 30px;
+  text-align: center;
+}
+.result-container .retry-button {
+  padding: 10px 20px;
+  font-size: 1.2rem;
+  color: white;
+  background-color: #0070f3;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+.result-container .retry-button:hover {
+  background-color: #005bb5;
+}/*# sourceMappingURL=result.css.map */

@@ -1,0 +1,41 @@
+$quiz-bg-color: #f0f4f8; // 背景色
+$question-text-color: #333; // 質問のテキスト色
+$button-bg-color: #0070f3; // ボタンの背景色
+$button-hover-bg-color: #005bb5; // ボタンのホバー時の背景色
+
+.quiz-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background-color: $quiz-bg-color; // 背景色
+    min-height: 100vh; // ビューポートの高さに合わせる
+    font-family: 'Arial', sans-serif; // フォントの設定
+
+    .question-container {
+        margin-bottom: 30px; // 質問間のマージン
+        text-align: center; // 中央揃え
+
+        .question-text {
+            font-size: 1.8rem; // 質問のテキストサイズ
+            color: $question-text-color; // 質問のテキスト色
+            margin-bottom: 15px; // 下のマージン
+        }
+
+        .answer-button {
+            padding: 10px 15px; // ボタンの内側の余白
+            font-size: 1.2rem; // ボタンのフォントサイズ
+            color: white; // ボタンの文字色
+            background-color: $button-bg-color; // ボタンの背景色
+            border: none; // ボーダーなし
+            border-radius: 5px; // 角を丸くする
+            cursor: pointer; // カーソルをポインターに
+            transition: background-color 0.3s; // ホバー時のトランジション
+
+            &:hover {
+                background-color: $button-hover-bg-color; // ホバー時の背景色
+            }
+        }
+    }
+}

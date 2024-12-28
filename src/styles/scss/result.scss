@@ -1,0 +1,45 @@
+$result-bg-color: #f9f9f9; // 背景色
+$result-title-color: #333; // タイトルの色
+$result-text-color: #555; // テキストの色
+$button-bg-color: #0070f3; // ボタンの背景色
+$button-hover-bg-color: #005bb5; // ボタンのホバー時の背景色
+
+.result-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh; // ビューポートの高さに合わせる
+    background-color: $result-bg-color; // 背景色
+    padding: 20px;
+    font-family: 'Arial', sans-serif; // フォントの設定
+
+    .result-title {
+        font-size: 2.5rem; // タイトルのサイズ
+        color: $result-title-color; // タイトルの色
+        margin-bottom: 20px; // 下のマージン
+        text-align: center; // 中央揃え
+    }
+
+    .result-text {
+        font-size: 1.5rem; // テキストのサイズ
+        color: $result-text-color; // テキストの色
+        margin-bottom: 30px; // 下のマージン
+        text-align: center; // 中央揃え
+    }
+
+    .retry-button {
+        padding: 10px 20px; // ボタンの内側の余白
+        font-size: 1.2rem; // ボタンのフォントサイズ
+        color: white; // ボタンの文字色
+        background-color: $button-bg-color; // ボタンの背景色
+        border: none; // ボーダーなし
+        border-radius: 5px; // 角を丸くする
+        cursor: pointer; // カーソルをポインターに
+        transition: background-color 0.3s; // ホバー時のトランジション
+
+        &:hover {
+            background-color: $button-hover-bg-color; // ホバー時の背景色
+        }
+    }
+}
