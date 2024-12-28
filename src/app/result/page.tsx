@@ -26,7 +26,10 @@ const ResultPage = () => {
                             <p>外向型</p>
                         </div>
                         <div className="bar">   
-                            <div className={percentages.group1 <= 50 ? 'result_bar right_align' : 'result_bar'} style={{ width: `${Math.round(percentages.group1)}%` }}></div>
+                            <div 
+                            className={percentages.group1 <= 50 ? 'result_bar right_align' : 'result_bar'} 
+                            style={{ width: `${percentages.group1 > 50 ? Math.round(percentages.group1) : 100 - Math.round(percentages.group1)}%` }}
+                            ></div>
                         </div>  
                         <div className={percentages.group1 <= 50 ? 'right color_blue' : 'right'}>
                             <p className="font-en">{100 - Math.round(percentages.group1)}<span className="percent">%</span></p>
@@ -39,7 +42,10 @@ const ResultPage = () => {
                             <p>感覚型</p>
                         </div>
                         <div className="bar">
-                            <div className={percentages.group2 <= 50 ? 'result_bar right_align' : 'result_bar'} style={{ width: `${Math.round(percentages.group2)}%` }}></div>
+                            <div 
+                            className={percentages.group2 <= 50 ? 'result_bar right_align' : 'result_bar'} 
+                            style={{ width: `${percentages.group2 > 50 ? Math.round(percentages.group2) : 100 - Math.round(percentages.group2)}%` }}
+                            ></div>
                         </div>
                         <div className={percentages.group2 <= 50 ? 'right color_green' : 'right'}>
                             <p className="font-en">{100 - Math.round(percentages.group2)}<span className="percent">%</span></p>
@@ -52,7 +58,10 @@ const ResultPage = () => {
                             <p>思考型</p>
                         </div>
                         <div className="bar">
-                            <div className={percentages.group3 <= 50 ? 'result_bar right_align' : 'result_bar'} style={{ width: `${Math.round(percentages.group3)}%` }}></div>
+                            <div 
+                            className={percentages.group3 <= 50 ? 'result_bar right_align' : 'result_bar'} 
+                            style={{ width: `${percentages.group3 > 50 ? Math.round(percentages.group3) : 100 - Math.round(percentages.group3)}%` }}
+                            ></div>
                         </div>
                         <div className={percentages.group3 <= 50 ? 'right color_yellow' : 'right'}>
                             <p className="font-en">{100 - Math.round(percentages.group3)}<span className="percent">%</span></p>
@@ -65,7 +74,10 @@ const ResultPage = () => {
                             <p>判断型</p>
                         </div>
                         <div className="bar">
-                            <div className={percentages.group4 <= 50 ? 'result_bar right_align' : 'result_bar'} style={{ width: `${Math.round(percentages.group4)}%` }}></div>
+                            <div 
+                            className={percentages.group4 <= 50 ? 'result_bar right_align' : 'result_bar'} 
+                            style={{ width: `${percentages.group4 > 50 ? Math.round(percentages.group4) : 100 - Math.round(percentages.group4)}%` }}
+                            ></div>
                         </div>
                         <div className={percentages.group4 <= 50 ? 'right color_red' : 'right'}>
                             <p className="font-en">{100 - Math.round(percentages.group4)}<span className="percent">%</span></p>
