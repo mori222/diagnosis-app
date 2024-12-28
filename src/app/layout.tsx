@@ -1,7 +1,8 @@
 'use client'
 
-import React from 'react'
-import '../styles/scss/global.scss';
+import React from 'react';
+import '../styles/css/reset.css';
+import '../styles/css/global.css';
 
 export default function RootLayout({
   children,
@@ -10,7 +11,13 @@ export default function RootLayout({
 }) {
   return (
     <html lang="ja">
-      <body>{children}</body>
+      <body>
+        <main>
+          <div className="wrap">
+            {children}
+          </div>
+        </main>
+      </body>
     </html>
   )
 }

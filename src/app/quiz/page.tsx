@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 import { questions } from '../../data/questions';
 import { useRouter } from 'next/navigation';
-import '../../styles/scss/quiz.scss';
+import '../../styles/css/quiz.css';
 
 const QuizPage = () => {
     const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
@@ -24,16 +24,23 @@ const QuizPage = () => {
     const currentQuestion = questions[currentQuestionIndex];
 
     return (
-        <div className="quiz-container">
-            <div className="question-container">
-                <h2 className="question-text">{currentQuestion.text}</h2>
+        <div className="content_wrap">  
+            <div className="quiz_container">
+                <div className="number_wrap">
+                    <span className="current_number">{currentQuestionIndex + 1}</span>
+                    <span className="slash">/</span>
+                    <span className="all_number">{questions.length}</span>
+            </div>
+            <h2 className="question_text">{currentQuestion.text}</h2>
+            <div className="answer_button_wrap">
                 {currentQuestion.options.map((option) => (
-                    <button key={option} className="answer-button" onClick={() => handleAnswer(option)}>
+                    <button key={option} className="answer_button" onClick={() => handleAnswer(option)}>
                         {option}
                     </button>
-                ))}
+                    ))}
+                </div>
             </div>
-        </div>
+        </div>  
     );
 };
 

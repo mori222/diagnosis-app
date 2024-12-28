@@ -1,32 +1,74 @@
-.quiz-container {
+/* Scss Document */
+/* CSS Document */
+/*------------------------------mixin bg------------------------------*/
+/*------------------------------mixin flex------------------------------*/
+.content_wrap {
+  background: #f2f2f2;
+  padding: 10rem 3rem;
+  min-height: 100vh;
+}
+.content_wrap .quiz_container {
+  width: 100%;
+  padding: 10rem 3rem;
+  background: #fff;
+  padding: 4rem 2rem;
+  border-radius: 1rem;
+}
+.content_wrap .quiz_container .number_wrap {
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 20px;
-  background-color: #f0f4f8;
-  min-height: 100vh;
-  font-family: "Arial", sans-serif;
+  align-items: flex-end;
 }
-.quiz-container .question-container {
-  margin-bottom: 30px;
-  text-align: center;
+.content_wrap .quiz_container .number_wrap .current_number {
+  font-size: 4rem;
+  color: #FC7848;
 }
-.quiz-container .question-container .question-text {
+.content_wrap .quiz_container .number_wrap .slash, .content_wrap .quiz_container .number_wrap .all_number {
+  font-size: 1.6rem;
+  color: #aaa;
+}
+.content_wrap .quiz_container .question_text {
+  font-size: 1.6rem;
+  font-weight: bold;
+  margin-top: 2.4rem;
+  padding: 0 0.5rem;
+  line-height: 1.8;
+}
+.content_wrap .quiz_container .answer_button_wrap {
+  margin-top: 2rem;
+  padding-top: 2.4rem;
+  border-top: 2px dashed #aaa;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
+.content_wrap .quiz_container .answer_button_wrap .answer_button {
+  width: 12.8rem;
+  height: 5.2rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 0.8rem 0.8rem rgba(0, 0, 0, 0.08);
   font-size: 1.8rem;
-  color: #333;
-  margin-bottom: 15px;
-}
-.quiz-container .question-container .answer-button {
-  padding: 10px 15px;
-  font-size: 1.2rem;
-  color: white;
-  background-color: #0070f3;
-  border: none;
-  border-radius: 5px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #FC7848;
+  color: #fff;
+  position: relative;
   cursor: pointer;
-  transition: background-color 0.3s;
 }
-.quiz-container .question-container .answer-button:hover {
-  background-color: #005bb5;
+.content_wrap .quiz_container .answer_button_wrap .answer_button::before {
+  content: "";
+  background: url(../../../public/images/arrow.svg) no-repeat center center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  width: 1.2rem;
+  height: 1.2rem;
+  position: absolute;
+  right: 1.2rem;
+  top: 50%;
+  transform: translateY(-50%);
 }/*# sourceMappingURL=quiz.css.map */

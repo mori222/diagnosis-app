@@ -1,0 +1,41 @@
+$color-black: #333;
+$color-gray: #aaa;
+$color-light-gray: #f2f2f2;
+$color-orange: #FC7848;
+$color-blue: #4297B7;
+$color-green: #32A477;
+$color-yellow: #F3BD3F;
+$color-purple: #88619B;
+$color-red: #F55E61;
+
+$media-pc: 700px;
+
+@mixin pc {
+  @media only screen and (min-width: $media-pc ) {
+    @content;
+  }
+}
+
+/*------------------------------mixin bg------------------------------*/
+@mixin bg-cover{
+	background-repeat:no-repeat;
+	background-size:cover;
+	background-position:center;
+}
+@mixin bg-contain{
+	background-repeat:no-repeat;
+	background-size:contain;
+	background-position:center;
+}
+/*------------------------------mixin flex------------------------------*/
+@mixin flex{
+	display:flex;
+	align-items:center;
+	justify-content:center;
+}
+@mixin flex-column{
+	display:flex;
+	flex-direction:column;
+	align-items:center;
+	justify-content:center;
+}

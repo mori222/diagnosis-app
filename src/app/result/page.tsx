@@ -3,7 +3,7 @@
 import React, { Suspense } from 'react';
 import { useSearchParams } from 'next/navigation';
 import { calculateResult } from '../../utils/calculateResult';
-import '../../styles/scss/result.scss';
+import '../../styles/css/result.css';
 
 const ResultPage = () => {
     const searchParams = useSearchParams();
@@ -16,11 +16,10 @@ const ResultPage = () => {
 
     return (
         <div className="result-container">
-            <h1 className="result-title">あなたに向いている職種は...</h1>
-            <p className="result-text">{result}</p>
-            <button className="retry-button" onClick={() => window.location.href = '/quiz'}>
-                もう一度クイズを受ける
-            </button>
+            <div className="result-inner">
+                <h1 className="result-title">あなたに向いている職種は...</h1>
+                <p className="result-text">{result}</p>
+            </div>
         </div>
     );
 };
