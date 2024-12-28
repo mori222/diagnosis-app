@@ -108,47 +108,44 @@ export const questions: Question[] = [
   },
   {
     id: 22,
-    text: '感情的な判断を避けることが多いですか？',
-    options: ['はい', 'いいえ'],
-  },
-  {
-    id: 23,
     text: '計画を立てて行動するのが好きですか？',
     options: ['はい', 'いいえ'],
   },
   {
-    id: 24,
+    id: 23,
     text: '締め切りを守るのが得意ですか？',
     options: ['はい', 'いいえ'],
   },
   {
-    id: 25,
+    id: 24,
     text: '柔軟に対応するのが得意ですか？',
     options: ['はい', 'いいえ'],
   },
   {
-    id: 26,
+    id: 25,
     text: '状況に応じて即興で対応するのが得意ですか？',
     options: ['はい', 'いいえ'],
   },
   {
-    id: 27,
+    id: 26,
     text: '物事を早めに終わらせるのが好きですか？',
     options: ['はい', 'いいえ'],
   },
   {
-    id: 28,
+    id: 27,
     text: 'その場の流れで計画を変えることが苦になりませんか？',
     options: ['はい', 'いいえ'],
   },
   {
-    id: 29,
+    id: 28,
     text: '明確な指示やルールを好みますか？',
     options: ['はい', 'いいえ'],
   },
-  {
-    id: 30,
-    text: '自由な環境で働くのが好きですか？',
-    options: ['はい', 'いいえ'],
-  },
 ];
+
+const groups = {
+  group1: questions.slice(0, 7),
+  group2: questions.slice(7, 14),
+  group3: questions.slice(14, 21),
+  group4: questions.slice(21, 28),
+}

@@ -24,6 +24,7 @@ main {
 }
 
 .wrap {
+  font-family: "Noto Sans JP", sans-serif;
   min-height: 100vh;
   margin: 0 auto;
   max-width: 700px;
@@ -31,6 +32,10 @@ main {
   overflow: hidden;
   color: #333;
   font-size: 1.6rem;
+}
+
+.font-en {
+  font-family: "Avenir Next", sans-serif;
 }
 
 .pc-only {
@@ -59,4 +64,56 @@ section {
 
 picture {
   display: block;
+}
+
+.home_container {
+  text-align: center;
+  background: #FC7848;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
+.home_container .home_title {
+  font-size: 3.6rem;
+  color: #fff;
+  font-weight: bold;
+  letter-spacing: 0.08em;
+}
+.home_container .home_button {
+  background: #fff;
+  color: #FC7848;
+  font-size: 1.8rem;
+  font-weight: bold;
+  letter-spacing: 0.08em;
+  width: 20rem;
+  height: 5rem;
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  transition: all 0.3s ease;
+}
+.home_container .home_button::before {
+  content: "";
+  background: url(../../../public/images/arrow_orange.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  width: 1.5rem;
+  height: 1.5rem;
+  position: absolute;
+  right: 1.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: all 0.3s ease;
+}
+.home_container .home_button:hover {
+  opacity: 0.6;
+}
+.home_container .home_button:hover::before {
+  transform: translateX(0.3rem) translateY(-50%);
 }/*# sourceMappingURL=global.css.map */

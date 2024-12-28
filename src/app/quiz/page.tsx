@@ -17,7 +17,8 @@ const QuizPage = () => {
         if (nextQuestionIndex < questions.length) {
             setCurrentQuestionIndex(nextQuestionIndex);
         } else {
-            router.push(`/result?answers=${encodeURIComponent(JSON.stringify([...answers, answer]))}`);
+            const abbreviatedAnswers = answers.map(answer => (answer === 'はい' ? 'y' : 'n'));
+            router.push(`/result?answers=${JSON.stringify(abbreviatedAnswers)}`);
         }
     };
 
@@ -26,7 +27,7 @@ const QuizPage = () => {
     return (
         <div className="content_wrap">  
             <div className="quiz_container">
-                <div className="number_wrap">
+                <div className="number_wrap font-en">
                     <span className="current_number">{currentQuestionIndex + 1}</span>
                     <span className="slash">/</span>
                     <span className="all_number">{questions.length}</span>

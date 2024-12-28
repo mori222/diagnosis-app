@@ -13,5 +13,94 @@
         background: #fff;
         padding: 4rem 2rem;
         border-radius: 1rem;
+        text-align: center;
+        .result_title{
+            font-size: 1.4rem;
+        }
+        .result_text{
+            font-size: 1.6rem;
+            color: $color-orange;
+            font-weight: bold;
+            margin-top: 1rem;
+            line-height: 1.5;
+        }
+        ul{
+            margin-top: 3rem;
+            padding-top: 3rem;
+            border-top: 2px dashed $color-gray;
+            li{
+                @include flex;
+                gap: 0.8rem;
+                color: $color-gray;
+                .color_orange{
+                    color: $color-orange;	
+                }
+                .color_blue{
+                    color: $color-blue;
+                }
+                .color_green{
+                    color: $color-green;
+                }
+                .color_yellow{
+                    color: $color-yellow;
+                }
+                .color_red{
+                    color: $color-red;
+                }
+                p{
+                    font-size: 1rem;
+                    line-height: 1.2;
+                    &.font-en{
+                        font-size: 1.6rem;
+                        font-weight: 500;
+                        .percent{
+                            font-size: 1rem;
+                        }
+                    }
+                } 
+                .bar{
+                    width: 20rem;
+                    height: 1.6rem;
+                    background: #EAEAEA;
+                    border-radius: 99px;
+                    position: relative;
+                    .result_bar{
+                        height: 100%;
+                        border-radius: 99px;
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        &.right_align {
+                            left: auto;
+                            right: 0;
+                            justify-content: flex-end;
+                        }
+                    }
+                }
+                + li{
+                    margin-top: 1.5rem;
+                }
+                &:first-child{
+                    .result_bar{
+                        background: $color-blue;
+                    }
+                }
+                &:nth-child(2){
+                    .result_bar{
+                        background: $color-green;
+                    }
+                }
+                &:nth-child(3){
+                    .result_bar{
+                        background: $color-yellow;
+                    }
+                }
+                &:last-child{
+                    .result_bar{
+                        background: $color-red;
+                    }
+                }
+            }
+        }
     }
 }

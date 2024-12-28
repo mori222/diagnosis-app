@@ -11,4 +11,87 @@
   background: #fff;
   padding: 4rem 2rem;
   border-radius: 1rem;
+  text-align: center;
+}
+.result-container .result-inner .result_title {
+  font-size: 1.4rem;
+}
+.result-container .result-inner .result_text {
+  font-size: 1.6rem;
+  color: #FC7848;
+  font-weight: bold;
+  margin-top: 1rem;
+  line-height: 1.5;
+}
+.result-container .result-inner ul {
+  margin-top: 3rem;
+  padding-top: 3rem;
+  border-top: 2px dashed #aaa;
+}
+.result-container .result-inner ul li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+  color: #aaa;
+}
+.result-container .result-inner ul li .color_orange {
+  color: #FC7848;
+}
+.result-container .result-inner ul li .color_blue {
+  color: #4297B7;
+}
+.result-container .result-inner ul li .color_green {
+  color: #32A477;
+}
+.result-container .result-inner ul li .color_yellow {
+  color: #F3BD3F;
+}
+.result-container .result-inner ul li .color_red {
+  color: #F55E61;
+}
+.result-container .result-inner ul li p {
+  font-size: 1rem;
+  line-height: 1.2;
+}
+.result-container .result-inner ul li p.font-en {
+  font-size: 1.6rem;
+  font-weight: 500;
+}
+.result-container .result-inner ul li p.font-en .percent {
+  font-size: 1rem;
+}
+.result-container .result-inner ul li .bar {
+  width: 20rem;
+  height: 1.6rem;
+  background: #EAEAEA;
+  border-radius: 99px;
+  position: relative;
+}
+.result-container .result-inner ul li .bar .result_bar {
+  height: 100%;
+  border-radius: 99px;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.result-container .result-inner ul li .bar .result_bar.right_align {
+  left: auto;
+  right: 0;
+  justify-content: flex-end;
+}
+.result-container .result-inner ul li + li {
+  margin-top: 1.5rem;
+}
+.result-container .result-inner ul li:first-child .result_bar {
+  background: #4297B7;
+}
+.result-container .result-inner ul li:nth-child(2) .result_bar {
+  background: #32A477;
+}
+.result-container .result-inner ul li:nth-child(3) .result_bar {
+  background: #F3BD3F;
+}
+.result-container .result-inner ul li:last-child .result_bar {
+  background: #F55E61;
 }/*# sourceMappingURL=result.css.map */

@@ -1,8 +1,12 @@
+import Link from 'next/link';
+
 const HomePage = () => {
     return (
-        <div>
-            <h1>Welcome to the Quiz App!</h1>
-            <p>This is the home page of the quiz application.</p>
+        <div className="home_container">
+            <h1 className="home_title">適職診断</h1>
+            <Link href="/quiz">
+                <button className="home_button">診断する</button>
+            </Link>
         </div>
     );
 };

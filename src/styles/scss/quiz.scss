@@ -17,9 +17,12 @@
         border-radius: 1rem;
         .number_wrap{
             @include flex;
+            line-height: 1;
             align-items: flex-end;
+            font-weight: 500;
             .current_number{
                 font-size: 4rem;
+                transform: translateY(11%);
                 color: $color-orange;
             }
             .slash, .all_number{
@@ -52,6 +55,10 @@
                 color: #fff;
                 position: relative;
                 cursor: pointer;
+                transition: all 0.3s;
+                &:hover{
+                    opacity: 0.6;
+                }
                 &::before{
                     content: '';
                     background: url(../../../public/images/arrow.svg) no-repeat center center;

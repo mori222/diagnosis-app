@@ -21,6 +21,7 @@ main{
 	flex:1;
 }
 .wrap{
+	font-family: 'Noto Sans JP', sans-serif;
 	min-height:100vh;
 	margin:0 auto;
 	max-width: 700px;
@@ -28,6 +29,9 @@ main{
 	overflow:hidden;
 	color: $color-black;
 	font-size: 1.6rem;
+}
+.font-en{
+	font-family: 'Avenir Next', sans-serif;
 }
 .pc-only{
 	display:none;
@@ -48,4 +52,48 @@ section{
 }
 picture{
 	display:block;
+}
+.home_container{
+    text-align: center;
+    background: $color-orange;
+	min-height: 100vh;
+	@include flex-column;
+	gap: 2rem;
+	.home_title{
+		font-size: 3.6rem;
+		color: #fff;
+		font-weight: bold;
+		letter-spacing: 0.08em;
+	}
+	.home_button{
+		background: #fff;
+		color: $color-orange;
+		font-size: 1.8rem;
+		font-weight: bold;
+		letter-spacing: 0.08em;
+		width: 20rem;
+		height: 5rem;
+		border-radius: 999px;
+		@include flex;
+		position: relative;
+		transition: all 0.3s ease;
+		&::before{
+			content: '';
+			background: url(../../../public/images/arrow_orange.svg);
+			@include bg-contain;
+			width: 1.5rem;
+			height: 1.5rem;
+			position: absolute;
+			right: 1.5rem;
+			top: 50%;
+			transform: translateY(-50%);
+			transition: all 0.3s ease;
+		}
+		&:hover{
+			opacity: 0.6;
+			&::before{
+				transform: translateX(0.3rem) translateY(-50%);
+			}
+		}
+	}
 }
