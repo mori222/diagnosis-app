@@ -74,6 +74,8 @@
   position: absolute;
   top: 0;
   left: 0;
+  width: 0;
+  transition: width 1s ease-in-out;
 }
 .result-container .result-inner ul li .bar .result_bar.right_align {
   left: auto;

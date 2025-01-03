@@ -1,6 +1,6 @@
 'use client'
 
-import React, { Suspense } from 'react';
+import React, { Suspense, useState, useEffect } from 'react';
 import { useSearchParams } from 'next/navigation';
 import { calculateResult } from '../../utils/calculateResult';
 import '../../styles/css/result.css';
@@ -13,6 +13,17 @@ const ResultPage = () => {
 
     const parsedAnswers = JSON.parse(answers as string);
     const { percentages, suggestedJobs } = calculateResult(parsedAnswers);
+    const [widths, setWidths] = useState(['0%', '0%', '0%', '0%']);
+
+    useEffect(() => {
+        const newWidths = [
+            percentages.group1 > 50 ? `${Math.round(percentages.group1)}%` : `${100 - Math.round(percentages.group1)}%`,
+            percentages.group2 > 50 ? `${Math.round(percentages.group2)}%` : `${100 - Math.round(percentages.group2)}%`,
+            percentages.group3 > 50 ? `${Math.round(percentages.group3)}%` : `${100 - Math.round(percentages.group3)}%`,
+            percentages.group4 > 50 ? `${Math.round(percentages.group4)}%` : `${100 - Math.round(percentages.group4)}%`,
+        ];
+        setWidths(newWidths);
+    }, [percentages.group1, percentages.group2, percentages.group3, percentages.group4]);
 
     return (
         <div className="result-container">
@@ -21,14 +32,14 @@ const ResultPage = () => {
                 <p className="result_text">{suggestedJobs}</p>
                 <ul>
                     <li>
-                        <div className={percentages.group1 >= 50 ? 'left color_blue' : 'left'}>
+                    <div className={percentages.group1 >= 50 ? 'right color_blue' : 'left'}>
                             <p className="font-en">{Math.round(percentages.group1)}<span className="percent">%</span></p>
                             <p>外向型</p>
                         </div>
                         <div className="bar">   
                             <div 
-                            className={percentages.group1 <= 50 ? 'result_bar right_align' : 'result_bar'} 
-                            style={{ width: `${percentages.group1 > 50 ? Math.round(percentages.group1) : 100 - Math.round(percentages.group1)}%` }}
+                            className={percentages.group1 <= 50 ? 'result_bar right_align' : 'result_bar'}
+                            style={{ width: widths[0] }}
                             ></div>
                         </div>  
                         <div className={percentages.group1 <= 50 ? 'right color_blue' : 'right'}>
@@ -43,8 +54,8 @@ const ResultPage = () => {
                         </div>
                         <div className="bar">
                             <div 
-                            className={percentages.group2 <= 50 ? 'result_bar right_align' : 'result_bar'} 
-                            style={{ width: `${percentages.group2 > 50 ? Math.round(percentages.group2) : 100 - Math.round(percentages.group2)}%` }}
+                            className={percentages.group2 <= 50 ? 'result_bar right_align' : 'result_bar'}
+                            style={{ width: widths[1] }}
                             ></div>
                         </div>
                         <div className={percentages.group2 <= 50 ? 'right color_green' : 'right'}>
@@ -59,8 +70,8 @@ const ResultPage = () => {
                         </div>
                         <div className="bar">
                             <div 
-                            className={percentages.group3 <= 50 ? 'result_bar right_align' : 'result_bar'} 
-                            style={{ width: `${percentages.group3 > 50 ? Math.round(percentages.group3) : 100 - Math.round(percentages.group3)}%` }}
+                            className={percentages.group3 <= 50 ? 'result_bar right_align' : 'result_bar'}
+                            style={{ width: widths[2] }}
                             ></div>
                         </div>
                         <div className={percentages.group3 <= 50 ? 'right color_yellow' : 'right'}>
@@ -75,8 +86,8 @@ const ResultPage = () => {
                         </div>
                         <div className="bar">
                             <div 
-                            className={percentages.group4 <= 50 ? 'result_bar right_align' : 'result_bar'} 
-                            style={{ width: `${percentages.group4 > 50 ? Math.round(percentages.group4) : 100 - Math.round(percentages.group4)}%` }}
+                            className={percentages.group4 <= 50 ? 'result_bar right_align' : 'result_bar'}
+                            style={{ width: widths[3] }}
                             ></div>
                         </div>
                         <div className={percentages.group4 <= 50 ? 'right color_red' : 'right'}>
