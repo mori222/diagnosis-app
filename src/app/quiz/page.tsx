@@ -1,9 +1,9 @@
 'use client'
 
 import React, { useState } from 'react';
-import { questions } from '../../data/questions';
+import { questions } from '@/data/questions';
 import { useRouter } from 'next/navigation';
-import '../../styles/css/quiz.css';
+import '@/styles/css/quiz.css';
 
 const QuizPage = () => {
     const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
@@ -11,13 +11,13 @@ const QuizPage = () => {
     const router = useRouter();
 
     const handleAnswer = (answer: string) => {
-        setAnswers((prev) => [...prev, answer]);
+        setAnswers((prev: string[]) => [...prev, answer]);
         const nextQuestionIndex = currentQuestionIndex + 1;
 
         if (nextQuestionIndex < questions.length) {
             setCurrentQuestionIndex(nextQuestionIndex);
         } else {
-            const abbreviatedAnswers = answers.map(answer => (answer === 'はい' ? 'y' : 'n'));
+            const abbreviatedAnswers = answers.map((answer: string) => (answer === 'はい' ? 'y' : 'n'));
             router.push(`/result?answers=${JSON.stringify(abbreviatedAnswers)}`);
         }
     };
