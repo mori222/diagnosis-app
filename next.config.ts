@@ -6,6 +6,7 @@ const nextConfig: NextConfig = {
 
 module.exports = {
   output: 'export',
+  assetPrefix: './',
 };
 
 export default nextConfig;
