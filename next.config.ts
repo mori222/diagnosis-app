@@ -1,12 +1,23 @@
 import type { NextConfig } from "next";
+import CssMinimizerPlugin from 'css-minimizer-webpack-plugin';
 
 const nextConfig: NextConfig = {
-  /* config options here */
-};
+  // output: 'export',
+  // assetPrefix: './',
+  // trailingSlash: true,
+  // webpack: (config, { dev, isServer }) => {
+  //   if (!dev && !isServer) {
+  //     config.optimization.minimize = false;
+  //     config.optimization.minimizer = [];
+  //     if (config.optimization.minimizer) {
+  //       config.optimization.minimizer = config.optimization.minimizer.filter(
+  //         (plugin: any) => !(plugin instanceof CssMinimizerPlugin)
+  //       );
+  //     }
+  //   }
 
-module.exports = {
-  output: 'export',
-  assetPrefix: './',
+  //   return config;
+  // },
 };
 
 export default nextConfig;
