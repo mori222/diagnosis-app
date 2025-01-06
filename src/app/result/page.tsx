@@ -8,12 +8,12 @@ import '../../styles/css/result.css';
 const ResultPage = () => {
     const searchParams = useSearchParams();
     const answers = searchParams.get('answers');
+    const [widths, setWidths] = useState(['0%', '0%', '0%', '0%']);
 
-    if (!answers || typeof answers !== 'string') return <div>Loading...</div>;
+    // if (!answers || typeof answers !== 'string') return <div>Loading...</div>;
 
     const parsedAnswers = JSON.parse(answers as string);
     const { percentages, suggestedJobs } = calculateResult(parsedAnswers);
-    const [widths, setWidths] = useState(['0%', '0%', '0%', '0%']);
 
     useEffect(() => {
         const newWidths = [
@@ -36,12 +36,12 @@ const ResultPage = () => {
                             <p className="font-en">{Math.round(percentages.group1)}<span className="percent">%</span></p>
                             <p>外向型</p>
                         </div>
-                        <div className="bar">   
-                            <div 
+                        <div className="bar">
+                            <div
                             className={percentages.group1 <= 50 ? 'result_bar right_align' : 'result_bar'}
                             style={{ width: widths[0] }}
                             ></div>
-                        </div>  
+                        </div>
                         <div className={percentages.group1 <= 50 ? 'right color_blue' : 'right'}>
                             <p className="font-en">{100 - Math.round(percentages.group1)}<span className="percent">%</span></p>
                             <p>内向型</p>
@@ -53,7 +53,7 @@ const ResultPage = () => {
                             <p>感覚型</p>
                         </div>
                         <div className="bar">
-                            <div 
+                            <div
                             className={percentages.group2 <= 50 ? 'result_bar right_align' : 'result_bar'}
                             style={{ width: widths[1] }}
                             ></div>
@@ -69,7 +69,7 @@ const ResultPage = () => {
                             <p>思考型</p>
                         </div>
                         <div className="bar">
-                            <div 
+                            <div
                             className={percentages.group3 <= 50 ? 'result_bar right_align' : 'result_bar'}
                             style={{ width: widths[2] }}
                             ></div>
@@ -85,7 +85,7 @@ const ResultPage = () => {
                             <p>判断型</p>
                         </div>
                         <div className="bar">
-                            <div 
+                            <div
                             className={percentages.group4 <= 50 ? 'result_bar right_align' : 'result_bar'}
                             style={{ width: widths[3] }}
                             ></div>

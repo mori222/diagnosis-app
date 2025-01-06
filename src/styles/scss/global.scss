@@ -10,7 +10,7 @@ html{
 	scroll-behavior: smooth;
 	font-size:2.56410256410256vw;
 	@include pc{
-		font-size: 100%;
+		font-size: 10px;
 	}
 }
 img,source{
@@ -29,6 +29,9 @@ main{
 	overflow:hidden;
 	color: $color-black;
 	font-size: 1.6rem;
+	@include pc{
+		max-width: 390px;
+	}
 }
 .font-en{
 	font-family: 'Avenir Next', sans-serif;
